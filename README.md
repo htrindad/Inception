@@ -1,3 +1,5 @@
+# TODO
+
 # Inception
 
 *This project has been creates as part of the 42 curriculum by htrindad*
@@ -15,3 +17,11 @@ $> make run
 ```
 
 ## Project Description
+
+### Virtual machine vs. Docker
+
+### Secrets vs. Environment variables
+
+### Docker network vs. Host network
+
+### Docker volume vs. Bind Mounts
