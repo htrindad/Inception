@@ -1,0 +1,12 @@
+version: "5.1"
+services:
+  nginx:
+    build: requirements/nginx/.
+    container_name: nginx
+    ports:
+      - "80:80"
+  wordpress:
+    build: requirements/wordpress/.
+    container_name: wp-php
+    ports:
+      - "9000"
