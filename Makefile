@@ -1,4 +1,5 @@
 up:
+	@mkdir -p /home/htrindad/data/wordpress /home/htrindad/data/mariadb
 	@docker compose -f ./srcs/docker-compose.yml up -d
 
 down:
@@ -15,6 +16,7 @@ status:
 
 clean:
 	docker compose -f ./srcs/docker-compose.yml down --rmi all -v
+	docker container prune -f
 
 restart: stop up
 
