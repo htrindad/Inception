@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-RUN apt update -y && apt upgrade -y && apt install -y mariadb-server mariadb-server
+RUN apt update -y && apt upgrade -y && apt install -y mariadb-server
 
 EXPOSE 3306
 
