@@ -1,5 +1,7 @@
 FROM debian:bookworm
 
-RUN apt update && apt install -y mariadb-server mariadb-server
+RUN apt update -y && apt upgrade -y && apt install -y mariadb-server mariadb-server
+
+EXPOSE 3306
 
 CMD [ "mysqld_safe" ]
