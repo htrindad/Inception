@@ -32,6 +32,9 @@ services:
         - .env
     networks:
         - inception
+    secrets:
+      - db_password
+      - db_root_password
     restart: always
   nginx:
     build: requirements/nginx/.
@@ -56,4 +59,15 @@ services:
         - inception
     env_file:
         - .env
+    secrets:
+      - db_password
+      - db_root_password
     restart: always
+
+secrets:
+  db_password:
+    file: ../secrets/db_password.txt
+  db_root_password:
+    file: ../secrets/db_root_password.txt
+  credentials:
+    file: ../secrets/credentials.txt
