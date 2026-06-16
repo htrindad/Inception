@@ -1,12 +1,10 @@
-# Inception
-
 *This project has been created as part of the 42 curriculum by htrindad*
 
 ## Description
 
 Inception is a 42 project, where our objective is through `docker compose`, create 3 services (that being the nginx server, a wordpress website, and a mariadb mysql database), through by creating each own docker file.
 
-The server starts with NGINX with TLS on port 443 (All traffic only happens here. Nothing can access the other services). WordPress in conjunction with php-fpm (under port 9000). Sending it's info to mariadb (port 3306).
+The server starts with NGINX with TLS on port 443 (All traffic only happens here. Nothing can access the other services). WordPress in conjunction with php-fpm (under port 9000). Sending its info to mariadb (port 3306).
 
 The project contains 2 named volumes for database and wordpress data.
 
@@ -16,7 +14,7 @@ It creates a self-signed certificate, uses secrets for passwords (db_password.tx
 
 For this project to work we need:
 - `docker` as well as `docker-compose`
-- add `htrindad.42.fr` to `/etc/host`
+- add `htrindad.42.fr` to `/etc/hosts`
 - create secrets, with the `db_password.txt`, `db_root_password.txt`, and `credentials.txt`
 - Link to https://htrindad.42.fr and accept the self-signed certificate warning.
 
@@ -28,11 +26,11 @@ starts the docker containers through `docker compose`.
 
 ### down
 
-shutdowns the docker containers through `docker compose`.
+stops and removes the containers through `docker compose` as well as the network.
 
 ### stop
 
-shutdowns the docker containers as well as it's resources.
+shutdowns just the docker containers.
 
 ### start
 
@@ -72,11 +70,11 @@ $> make <target>
 
 I'm not used with Docker and container orchestration (docker compose and YAML), so I used Claude Code as a tutor to learn those and to debug. It helped me understand concepts such as PID 1, named volumes, and FastCGI.
 
-### Conecpt comparisons
+### Concept comparisons
 
 #### VMs vs. Docker
 
-A VM tries to replicate the host hardware with the operator's OS. This is slow and heavy, not to mention it's environment is very isolated.
+A VM tries to replicate the host hardware with the operator's OS. This is slow and heavy, not to mention its environment is very isolated.
 
 When using containers, all of them share the host's kernel, and each one of them work in their own process level.
 
@@ -90,7 +88,7 @@ Docker networks bridge the containers, isolates the container's ips, and gives t
 
 #### Docker volumes vs. Bind mounts
 
-Docker volumes are completely managed by docker. Bind mounts are depended by the OS.
+Docker volumes are completely managed by docker. Bind mounts are depended by the OS. The two stores are **named volumes**, but with `driver_opts` (driver options). Making the data physically live in `/home/htrindad/data`. It is docker managed (satisfying the rule), but backed by a host directory (Which is not the forbidden bind-mount).
 
 ### References
 
