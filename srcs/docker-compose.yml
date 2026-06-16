@@ -20,6 +20,7 @@ networks:
 
 services:
   wordpress:
+    image: wordpress:42
     build: requirements/wordpress/.
     container_name: wp-php
     volumes:
@@ -35,6 +36,7 @@ services:
       - credentials
     restart: always
   nginx:
+    image: nginx:42
     build: requirements/nginx/.
     container_name: nginx
     ports:
@@ -47,6 +49,7 @@ services:
         - wordpress
     restart: always
   mariadb:
+    image: mariadb:42
     build: requirements/mariadb/.
     container_name: mariadb
     volumes:
