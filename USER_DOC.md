@@ -38,4 +38,4 @@ You can access it through `https://htrindad.42.fr/wp-admin`
 
 - To confirm the 3 containers are running, run: `make status` -- You should see `nginx`, `wp-php`, and `mariadb` up.
 - To confirm the site responds: link to `https://htrindad.42.fr` (accept the self-signed certificate warning).
-- Inspect a service as if something looks of: `docker logs <container>` (e.g. `docker logs wp-php`)
+- Inspect a service as if something looks off: `docker logs <container>` (e.g. `docker logs wp-php`)
