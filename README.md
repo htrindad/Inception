@@ -1,6 +1,6 @@
 # Inception
 
-*This project has been creates as part of the 42 curriculum by htrindad*
+*This project has been created as part of the 42 curriculum by htrindad*
 
 ## Description
 
