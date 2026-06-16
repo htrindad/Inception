@@ -23,4 +23,4 @@ fclean: clean
 
 restart: stop up
 
-re: clean up
+re: fclean up
