@@ -13,7 +13,7 @@ Inception is a 42 project with the objective of creating and managing containers
 run:
 
 ```sh
-$> make run
+$> make
 ```
 
 ## Project Description
