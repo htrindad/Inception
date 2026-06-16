@@ -22,8 +22,6 @@ services:
   wordpress:
     build: requirements/wordpress/.
     container_name: wp-php
-    ports:
-      - "9000"
     volumes:
       - wordpress:/var/www/html
     depends_on:
@@ -34,7 +32,7 @@ services:
         - inception
     secrets:
       - db_password
-      - db_root_password
+      - credentials
     restart: always
   nginx:
     build: requirements/nginx/.
@@ -53,8 +51,6 @@ services:
     container_name: mariadb
     volumes:
       - mariadb:/var/lib/mysql
-    ports:
-      - "3306"
     networks:
         - inception
     env_file:

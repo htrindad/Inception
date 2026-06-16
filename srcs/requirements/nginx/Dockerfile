@@ -8,6 +8,6 @@ RUN mkdir -p /etc/nginx/ssl && \
 		-out	/etc/nginx/ssl/inception.crt \
 		-subj	"/C=PT/ST=Lisbon/O=42/CN=htrindad.42.fr"
 
-COPY default /etc/nginx/sites-available/default/.
+COPY default /etc/nginx/sites-available/default
 
 CMD [ "nginx", "-g", "daemon off;" ]

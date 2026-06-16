@@ -1,6 +1,6 @@
 up:
 	@mkdir -p /home/htrindad/data/wordpress /home/htrindad/data/mariadb
-	@docker compose -f ./srcs/docker-compose.yml up -d
+	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
 down:
 	@docker compose -f ./srcs/docker-compose.yml down
