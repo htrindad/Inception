@@ -1,0 +1,11 @@
+[mysqld]
+# Listen on all interfaces so other containers on the inception
+# network (wordpress) can reach the DB at mariadb:3306.
+# Debian's default of 127.0.0.1 would only allow local connections.
+port		= 3306
+user		= root
+pid-file	= /run/mysqld/mysqld.pid
+basedir		= /usr
+datadir		= /var/lib/mysql
+tmpdir		= /tmp
+bind-address	= mariadb
