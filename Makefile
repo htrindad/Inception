@@ -15,8 +15,11 @@ status:
 	@docker ps
 
 clean:
-	docker compose -f ./srcs/docker-compose.yml down --rmi all -v
-	docker container prune -f
+	@docker compose -f ./srcs/docker-compose.yml down --rmi all -v
+	@docker container prune -f
+
+fclean: clean
+	@docker run --rm -v /home/htrindad:/host debian:bookworm rm -rf /host/data
 
 restart: stop up
 
